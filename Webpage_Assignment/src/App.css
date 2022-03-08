@@ -40,3 +40,17 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+.div {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  align-items: center;
+}
+.div > div > img {
+  width: 30%;
+}
+.div > div {
+  margin-top: 2%;
+}
