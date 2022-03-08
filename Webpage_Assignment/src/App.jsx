@@ -2,19 +2,28 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [note, useNote] = useState("");
+  const [note, setNote] = useState("");
+  const [note_taking, setNote_taking] = useState([]);
+
+  const handleSubmit = () => {
+    setNote_taking([...note_taking, note]);
+  };
+
   return (
     <div className="App">
+      <img src="" alt="Logo" />
+      <input
+        onChange={(e) => setNote(e.target.value)}
+        type="text"
+        placeholder="Add notes here"
+        id="input_box"
+      />
+      <button onClick={handleSubmit}>Submit</button>
       <div>
-        <img src="" alt="Logo" />
+        {note_taking.map((e) => {
+          return <p>{e}</p>;
+        })}
       </div>
-      <div>
-        <input type="text" placeholder="Add notes here" id="input_box" />
-      </div>
-      <div>
-        <button>Submit</button>
-      </div>
-      <div>{note}</div>
     </div>
   );
 }
